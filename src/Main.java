@@ -5,14 +5,19 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        Moldegarrafa garrafaTransparente = new Moldegarrafa();
 
-        Scanner entrada = new Scanner(System.in);
+        garrafaTransparente.cor = "Transparente";
+        garrafaTransparente.carga = 100;
+        garrafaTransparente.tampada = false;
+        garrafaTransparente.modelo = "Isotonico ";
+        garrafaTransparente.status();
 
-        int g ;
-        System.out.print("Digite um valor para 'g' :");
-        g= entrada.nextInt();
+        garrafaTransparente.tampada = true;
+        garrafaTransparente.status();
 
-        System.out.println("O valor de 'g' é: " + g);
+        garrafaTransparente.beber();
+        garrafaTransparente.destampar();
     }
 }
 
