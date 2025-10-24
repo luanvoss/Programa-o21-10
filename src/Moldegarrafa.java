@@ -1,29 +1,31 @@
 import java.lang.reflect.Method;
 
 public class Moldegarrafa {
-    String modelo;
-    String cor;
-    int carga;
-    boolean tampada;
+   public String modelo;
+   public String cor;
+     protected int carga = 100;
+   protected boolean tampada;
 
-   void  beber() {
+  public void  beber() {
        if (this.tampada == true) {
            System.out.println("Não é possível beber o líquido dessa garrafa, está fechada!!");
        } else {
            System.out.println("Capacidade da garrafa é : " + this.carga + " % " );
            System.out.println("Bebendo");
-           this.carga = this.carga - 10;
+           this.carga = this.carga - 50;
            System.out.println("Capacidade atual da garrafa depois do uso é de: " + this.carga);
 
        }
 
 
    }
-   void tampar(){
-       this.tampada = true;
+  private void tampar() {
+
+      this.tampada = true;
    }
- void destampar(){
-       this.tampada = false;
+  public void destampar (){
+
+      this.tampada = false;
  }
 
  void status(){

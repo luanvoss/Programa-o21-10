@@ -18,6 +18,9 @@ public class Main {
 
         garrafaTransparente.beber();
         garrafaTransparente.destampar();
+        garrafaTransparente.beber();
+        garrafaTransparente.beber();
+
     }
 }
 
