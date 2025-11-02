@@ -8,14 +8,14 @@ public class main {
                 Prantos time2 = new Prantos("Real Voss", "Adidas", 1985, 2, 8, 4, 3);
 
 
-                System.out.println("=== INFORMAÇÕES DOS TIMES ===");
+                System.out.println("INFORMAÇÕES DOS TIMES");
                 time1.exibirInformacoes();
                 time2.exibirInformacoes();
 
 
                 partidaFutebol partida = new partidaFutebol();
 
-                System.out.println("=== RESULTADO DA PARTIDA ===");
+                System.out.println(" RESULTADO DA PARTIDA ");
                 partida.jogarPartida(time1, time2);
             }
         }

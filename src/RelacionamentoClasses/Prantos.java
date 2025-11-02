@@ -22,7 +22,7 @@ public class Prantos {
         this.partidasEmpatadas = partidasEmpatadas;
     }
 
-    // ==== GETTERS ====
+
     public String getNome() {
         return nome;
     }
@@ -51,7 +51,7 @@ public class Prantos {
         return partidasEmpatadas;
     }
 
-    // ==== SETTERS ====
+
     public void setNome(String nome) {
         this.nome = nome;
     }
