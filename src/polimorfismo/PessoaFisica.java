@@ -1,18 +1,18 @@
 package polimorfismo;
 
 public class PessoaFisica extends pessoa {
-    private String CPF;
+    private int CPF;
 
-    public PessoaFisica(String endereço, String nome, String telefone, String CPF) {
+    public PessoaFisica(String endereço, String nome, String telefone, int CPF) {
         super(endereço, nome, telefone);
         this.CPF = CPF;
     }
 
-    public String getCPF() {
+    public int getCPF() {
         return CPF;
     }
 
-    public void setCPF(String CPF) {
+    public void setCPF(int CPF) {
         this.CPF = CPF;
     }
 
@@ -31,8 +31,11 @@ public class PessoaFisica extends pessoa {
         this.telefone = telefone;
         System.out.println("teleofne gravado: " + this.telefone);
     }
-    public void getgravar(String nome, String telefone, String endereço, String CPF) {
+    public void getgravar(String nome, String telefone, String endereço, int CPF) {
         this.CPF = CPF;
         System.out.println("CPF gravado: " + this.CPF);
+    }
+
+    public void gravar() {
     }
 }

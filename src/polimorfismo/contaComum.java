@@ -1,49 +1,93 @@
 package polimorfismo;
 
 public class contaComum {
-    private int numero;
-    private  int saldo;
-    private int tipo;
-
     public contaComum(int saldo, int numero, int tipo) {
-        this.saldo = saldo;
-        this.numero = numero;
-        this.tipo = tipo;
     }
 
-    public int getNumero() {
-        return numero;
+    public void depositar(int i) {
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public void sacar(int i) {
     }
 
-    public int getSaldo() {
-        return saldo;
-    }
+    public class ContaComum {
 
-    public void setSaldo(int saldo) {
-        this.saldo = saldo;
-    }
+        private int numero;
+        private int saldo;
+        private int tipo;
 
-    public int getTipo() {
-        return tipo;
-    }
 
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
-    }
+        private Histórico historico;
 
-    public  void getsacar(){
-        if(saldo <= 0){
-            System.out.println("Saldo insuficiente ");
-        } else {
-            System.out.println("Você sacou: " +this.saldo);
+        public ContaComum(int saldo, int numero, int tipo) {
+            this.saldo = saldo;
+            this.numero = numero;
+            this.tipo = tipo;
+            this.historico = new Histórico(); // cria um histórico próprio
         }
-    }
 
-    public  void getdepositar(){
-       System.out.println("Você depositou R$: " +this.saldo);
+        // getters e setters
+        public int getNumero() {
+            return numero;
+        }
+
+        public void setNumero(int numero) {
+            this.numero = numero;
+        }
+
+        public int getSaldo() {
+            return saldo;
+        }
+
+        public void setSaldo(int saldo) {
+            this.saldo = saldo;
+        }
+
+        public int getTipo() {
+            return tipo;
+        }
+
+        public void setTipo(int tipo) {
+            this.tipo = tipo;
+        }
+
+        public Histórico getHistorico() {
+            return historico;
+        }
+
+        public void setHistorico(Histórico historico) {
+            this.historico = historico;
+        }
+
+        // método público sacar : void
+        public void sacar(int valor) {
+            if (valor <= 0) {
+                System.out.println("Valor inválido para saque.");
+                return;
+            }
+
+            if (valor > saldo) {
+                System.out.println("Saldo insuficiente.");
+            } else {
+                saldo -= valor;
+                System.out.println("Saque realizado: " + valor);
+                System.out.println("Saldo atual: " + saldo);
+                // registra no histórico
+                historico.gravar(numero, tipo, "SAQUE", valor, saldo);
+            }
+        }
+
+
+        public void depositar(int valor) {
+            if (valor <= 0) {
+                System.out.println("Valor inválido para depósito.");
+                return;
+            }
+            saldo += valor;
+            System.out.println("Depósito realizado: " + valor);
+            System.out.println("Saldo atual: " + saldo);
+            // registra no histórico
+            historico.gravar(numero, tipo, "DEPOSITO", valor, saldo);
+        }
     }
 }

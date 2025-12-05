@@ -5,6 +5,6 @@ public class main {
         BancoFinanceiro banquinho = new BancoFinanceiro();
         banquinho.setDepositar();
         banquinho.setsacar();
-        System.out.println("Saldo final R$: "+banquinho.getstatus());
+        System.out.println("Saldo final R$: " +banquinho.getstatus());
     }
 }

@@ -1,18 +1,18 @@
 package polimorfismo;
 
 public class pessoaJuridica extends pessoa {
-    private String CNPJ;
+    private int CNPJ;
 
-    public pessoaJuridica(String endereço, String nome, String telefone, String CNPJ) {
+    public pessoaJuridica(String endereço, String nome, String telefone, int CNPJ) {
         super(endereço, nome, telefone);
         this.CNPJ = CNPJ;
     }
 
-    public String getCNPJ() {
+    public int getCNPJ() {
         return CNPJ;
     }
 
-    public void setCNPJ(String CNPJ) {
+    public void setCNPJ(int CNPJ) {
         this.CNPJ = CNPJ;
     }
 
@@ -36,5 +36,8 @@ public class pessoaJuridica extends pessoa {
         this.CNPJ = CNPJ;
         System.out.println("CPF gravado: " + this.CNPJ);
 
+    }
+
+    public void gravar() {
     }
 }
