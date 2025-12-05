@@ -5,6 +5,7 @@ public class Histórico {
     }
 
     public void imprimirHistórico() {
+
     }
 
     public class Historico {
